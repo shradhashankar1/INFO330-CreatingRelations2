@@ -11,11 +11,11 @@ CREATE TABLE Pokemon (
     speed INTEGER NOT NULL
 );
 
--- Import data from the CSV file into the Pokemon table
+
 .mode csv
 .import pokemon.csv Pokemon
 
--- Create the table for Evolution
+
 CREATE TABLE Evolution (
     pokedex_number INTEGER NOT NULL,
     evolves_from TEXT,
@@ -25,11 +25,11 @@ CREATE TABLE Evolution (
     FOREIGN KEY(pokedex_number) REFERENCES Pokemon(pokedex_number)
 );
 
--- Import data from the CSV file into the Evolution table
+
 .mode csv
 .import pokemon.csv Evolution
 
--- Create the table for Abilities
+
 CREATE TABLE Abilities (
     pokedex_number INTEGER NOT NULL,
     ability TEXT NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE Abilities (
 .mode csv
 .import pokemon.csv Abilities
 
--- Create the table for Egg_Group
+
 CREATE TABLE Egg_Group (
     pokedex_number INTEGER NOT NULL,
     egg_group TEXT NOT NULL,
@@ -49,6 +49,6 @@ CREATE TABLE Egg_Group (
     FOREIGN KEY(pokedex_number) REFERENCES Pokemon(pokedex_number)
 );
 
--- Import data from the CSV file into the Egg_Group table
+
 .mode csv
 .import pokemon.csv Egg_Group
